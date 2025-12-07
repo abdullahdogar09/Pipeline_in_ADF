@@ -1,4 +1,4 @@
-/****** Object:  StoredProcedure [dbo].[usp_TransformRawCallData]    Script Date: 11/16/2025 5:27:49 PM ******/
+/****** Object:  StoredProcedure [dbo].[usp_TransformRawCallData]    Script Date: 12/7/2025 11:56:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -66,16 +66,7 @@ BEGIN
             END AS Receiver_Country,
 
             -- Receiver Network
-            CASE 
-                WHEN SUBSTRING(r.CALL_DIALED_NUM, 3, 3) = '339' THEN 'Onic'
-                WHEN SUBSTRING(r.CALL_DIALED_NUM, 3, 3) = '355' THEN 'SCO'
-                WHEN SUBSTRING(r.CALL_DIALED_NUM, 3, 3) IN ('300','301','302','303','304','305','306','307','308','309',
-                                       '320','321','322','323','324','325','326','327','328','329') THEN 'Jazz'
-                WHEN SUBSTRING(r.CALL_DIALED_NUM, 3, 3) IN ('310','311','312','313','314','315','316','317','318','319','350') THEN 'Zong'
-                WHEN SUBSTRING(r.CALL_DIALED_NUM, 3, 3) IN ('340','341','342','343','344','345','346','347','348','349') THEN 'Telenor'
-                WHEN SUBSTRING(r.CALL_DIALED_NUM, 3, 3) IN ('330','331','332','333','334','335','336','337','338') THEN 'Ufone'
-                ELSE 'Unknown'
-            END AS Receiver_Network,
+            
 
             -- Call Duration
             DATEDIFF(SECOND, 
