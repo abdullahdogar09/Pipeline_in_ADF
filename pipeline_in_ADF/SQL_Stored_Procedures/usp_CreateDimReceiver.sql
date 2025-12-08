@@ -1,4 +1,4 @@
-/****** Object:  StoredProcedure [dbo].[usp_CreateDimReceiver]    Script Date: 11/16/2025 5:29:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[usp_CreateDimReceiver]    Script Date: 12/8/2025 11:03:51 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
